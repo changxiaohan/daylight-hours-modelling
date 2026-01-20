@@ -31,6 +31,7 @@ def daylight(t, lat):
         0.225*abs(lat) - 1.96
     phase = 79 if lat >= 0 else 264
     return max(0, min(24, 12 + K * math.sin(2 * math.pi / 365 * (t - phase))))
+
 true_values_45 = {
     0: 8.8666,
     30: 9.83,
@@ -103,4 +104,4 @@ ax2.set_ylim(0, 24)
 plt.tight_layout()
 plt.show()
 
-print("Dear Science Enthusiast, Both my improved method and the advanced method perform effectively at latitudes 45° and -45°. However, please note that the real-world data used here come from two specific locations, and thus do not represent all geographic latitudes on Earth. Therefore, it remains possible that at certain locations along the same latitude, actual daylight hours may differ from the estimated values. Additionally, this does not imply that the improved method is equivalent to the advanced method in all scenarios. For instance, at latitudes such as 90° or -90°, the performance of the improved method is notably less accurate.For further enhancement, if you are interested, you could focus on improving the method's performance at high latitudes. Perhaps introducing a revised function for parameter K might yield better results in such cases.")
+print("Dear Science Enthusiast,My improved method performs less effectively than the advanced method at latitudes 45° and –45°, largely because the approach I used to determine parameter K is linear. Please note that the real-world data employed here are drawn from only two specific locations and therefore may not be fully representative of all geographic latitudes. Thus, actual daylight hours could differ from my estimates at certain points along the same latitude.Additionally, the performance of my method tends to degrade at higher latitudes. For example, at latitudes such as 90° or –90°, the improved method shows notably lower accuracy. For further enhancement, if you are interested, you could explore using a higher-order polynomial fit via numpy.polyfit to derive a better function for K in terms of latitude. Revising the parameter K in this way may help improve the method’s performance, particularly at high latitudes. Please feel free to reach out if you have any questions or would like to discuss further.")
