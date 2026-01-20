@@ -102,5 +102,3 @@ ax2.set_ylim(0, 24)
 
 plt.tight_layout()
 plt.show()
-
-print("Dear Science Enthusiast, Both my improved method and the advanced method perform effectively at latitudes 45° and -45°. However, please note that the real-world data used here come from two specific locations, and thus do not represent all geographic latitudes on Earth. Therefore, it remains possible that at certain locations along the same latitude, actual daylight hours may differ from the estimated values. Additionally, this does not imply that the improved method is equivalent to the advanced method in all scenarios. For instance, at latitudes such as 90° or -90°, the performance of the improved method is notably less accurate.For further enhancement, if you are interested, you could focus on improving the method's performance at high latitudes. Perhaps introducing a revised function for parameter K might yield better results in such cases.")

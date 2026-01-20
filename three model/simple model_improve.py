@@ -2,8 +2,8 @@ import math
 import matplotlib.pyplot as plt
 
 def daylight(t, lat):
-    K = -0.000006*lat**3 + 0.001529*lat**2 + 0.016594*lat + 0.103280 if lat >= 0 else \
-        0.000017*abs(lat)**3 - 0.000446*abs(lat)**2 + 0.061293*abs(lat) + 0.114980
+    K = 0.051*lat + 9.8 if lat >= 0 else \
+        0.225*abs(lat) - 1.96
     phase = 79 if lat >= 0 else 264
     return max(0, min(24, 12 + K * math.sin(2 * math.pi / 365 * (t - phase))))
 
